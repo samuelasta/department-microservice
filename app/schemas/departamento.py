@@ -1,10 +1,10 @@
-
+from pydantic import BaseModel, ConfigDict
 
 class Department(BaseModel):
     
-    id: int
+    id: str
     name: str
     description: str
 
-    class Config:
-        orm_mode = True
+
+    model_config = ConfigDict(from_attributes=True)
