@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8081
 
 # COMANDO PARA EJECUTAR LA APLICACION
-CMD ["python", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8081"]

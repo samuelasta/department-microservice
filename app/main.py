@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.departaments_api import router as departamentos_router
+from app.api.departments_api import router as departamentos_router
 
 app = FastAPI(
     title="Departamentos Service",
