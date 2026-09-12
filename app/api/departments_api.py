@@ -15,13 +15,13 @@ router = APIRouter()
 @router.post("/departamentos", response_model=Department, status_code=status.HTTP_201_CREATED)
 def create_department(department: Department, db: Session = Depends(get_db)):
 
-    try:
+    #try:
          service = Department_service(db)
          result = service.create_department(department)
          return result
     
-    except Exception as e:
-         return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"Could not create department": str(e)})
+   # except Exception as e:
+     #    return JSONResponse(status_code=status.HTTP_400_BAD_REQUEST, content={"Could not create department": str(e)})
 
 
 # consultar un departamento por su id
@@ -43,7 +43,7 @@ def get_department(id: str, db: Session = Depends(get_db)):
 # lisrtar todos los departamentos
 @router.get("/departamentos", response_model=list[Department], status_code=status.HTTP_200_OK)
 def list_departments(db: Session = Depends(get_db)):
-    
+
     try:
         service = Department_service(db)
         departments = service.list_departments()
